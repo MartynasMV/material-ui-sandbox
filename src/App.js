@@ -11,7 +11,9 @@ import TextField from '@mui/material/TextField';
 // import { makeStyles } from '@mui/styles';
 // import 'fontsource-roboto';
 import Typography from '@mui/material/Typography';
-
+import Container from '@mui/material/Container';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
 // const useStyles = makeStyles({
 //   root: {
 //     background: 'linear-gradient(45deg, #FE6B8B,#000)',
@@ -51,52 +53,70 @@ function CheckboxExample() {
 }
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Typography variant="h2" component="div" fontSize={36} marginBottom={0}>
-          Welcome to:
-        </Typography>
-        <Typography variant="subtitle1">Material UI</Typography>
-        {/* <ButtonStyled /> */}
-        <TextField
-          variant="outlined"
-          color="secondary"
-          // type="date"
-          // type="time"
-          placeholder="test@test.com"
-          type="email"
-          // value="test@test.com"
-          label="Email"
-        />
-        <CheckboxExample></CheckboxExample>
-        <ButtonGroup size="large">
-          <Button
-            startIcon={<SaveIcon />}
-            // endIcon={<SaveIcon/> }
-            variant="contained"
-            color="primary"
-            // style={{fontSize: 54}}
-            onClick={() => console.log('click')}
+    <Container maxWidth="xs">
+      <div className="App">
+        <header className="App-header">
+          <Typography
+            variant="h2"
+            component="div"
+            fontSize={36}
+            marginBottom={0}
           >
-            Save
-          </Button>
-          <Button
-            startIcon={<DeleteIcon />}
-            // endIcon={<SaveIcon/> }
-            variant="contained"
+            Welcome to:
+          </Typography>
+          <Typography variant="subtitle1">Material UI</Typography>
+          {/* <ButtonStyled /> */}
+          <Grid container spacing={2} justifyContent="center">
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height: 75, width: '100%' }} />
+            </Grid>
+            <Grid item xs={3} sm={6}>
+              <Paper style={{ height: 75, width: '100%' }} />
+            </Grid>
+            <Grid item xs={3} sm={6} lg={12}>
+              <Paper style={{ height: 75, width: '100%' }} />
+            </Grid>
+          </Grid>
+          <TextField
+            variant="outlined"
             color="secondary"
-            // style={{fontSize: 54}}
-            onClick={() => console.log('click')}
-          >
-            Discard
-          </Button>
-        </ButtonGroup>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-      </header>
-    </div>
+            // type="date"
+            // type="time"
+            placeholder="test@test.com"
+            type="email"
+            // value="test@test.com"
+            label="Email"
+          />
+          <CheckboxExample></CheckboxExample>
+          <ButtonGroup size="large">
+            <Button
+              startIcon={<SaveIcon />}
+              // endIcon={<SaveIcon/> }
+              variant="contained"
+              color="primary"
+              // style={{fontSize: 54}}
+              onClick={() => console.log('click')}
+            >
+              Save
+            </Button>
+            <Button
+              startIcon={<DeleteIcon />}
+              // endIcon={<SaveIcon/> }
+              variant="contained"
+              color="secondary"
+              // style={{fontSize: 54}}
+              onClick={() => console.log('click')}
+            >
+              Discard
+            </Button>
+          </ButtonGroup>
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+        </header>
+      </div>
+    </Container>
   );
 }
 
